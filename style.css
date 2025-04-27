@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #eaeaea;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1 {
+    font-weight: 600;
+    text-align: center;
+    margin: 6px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+}
+
+.content {
+    background-color: #ffffff;
+    margin: 100px auto;
+    width: 90%;
+    max-width: 800px;
+    
+    border-radius: 8px;
+   
+
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.center {
+    display: none;
+}
+
+.sidebar {
+    transform: translateX(100%);
+    /* Move it off screen */
+    transition: transform 0.4s ease;
+    width: 100%;
+
+    background-color: #27242400;
+    padding: 20px;
+    position: fixed;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    top: 64px;
+    right: 0;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    /*  sidebar comes on top */
+}
+
+/* When sidebar is active */
+.sidebar.open {
+    transform: translateX(0);
+    /* Slide in */
+    transition: transform 0.9s ease;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li:hover {
+    background-color: #a7a7a7;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.sidebar ul li a {
+    color: #fffdfd;
+    padding: 10px;
+    font-weight: 800;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+@media (max-width: 400px) {
+    .links {
+        display: none;
+    }
+
+    .center {
+        display: flex;
+        top: 50%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 0px;
+    }
+}
+
+img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.paragraph {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333;
+}
